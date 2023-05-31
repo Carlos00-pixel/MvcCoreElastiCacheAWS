@@ -45,12 +45,12 @@
                         <img src="@Html.DisplayFor(modelItem => item.Imagen)" style="width: 150px; height: 150px" />
                     </td>
                     <td>
-                        @*<a asp-action="Details"
-                asp-controller="Coches"
-                asp-route-id="@item.IdCoche"
-                class="btn btn-info">
-                Detalles
-                </a>*@
+                        <a asp-action="EliminarFavorito"
+                        asp-controller="Coches"
+                            asp-route-id="@item.IdCoche"
+                        class="btn btn-info">
+                        Eliminiar favorito
+                </a>
 
                     </td>
                 </tr>
