@@ -9,10 +9,10 @@ namespace MvcCoreElastiCacheAWS.Services
     {
         private IDatabase cache;
 
-        public ServiceAWSCache()
-        {
-            this.cache = HelperCacheRedis.Connection.GetDatabase();
-        }
+        //public ServiceAWSCache()
+        //{
+        //    this.cache = HelperCacheRedis.Connection.GetDatabase();
+        //}
 
         public async Task<List<Coche>> GetCochesFavoritosAsync()
         {
