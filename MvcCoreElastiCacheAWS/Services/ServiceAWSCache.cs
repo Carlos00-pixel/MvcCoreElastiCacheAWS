@@ -8,10 +8,11 @@ namespace MvcCoreElastiCacheAWS.Services
     public class ServiceAWSCache
     {
         private IDatabase cache;
-
-        public ServiceAWSCache(IDatabase cache)
+        private ILogger<Coche> _logger;
+        public ServiceAWSCache(IDatabase cache, ILogger<Coche> _logger)
         {
             this.cache = cache;
+            this._logger = _logger;
         }
 
         public async Task<List<Coche>> GetCochesFavoritosAsync()
