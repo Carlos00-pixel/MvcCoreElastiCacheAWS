@@ -2,65 +2,66 @@
 
 <h1>Favoritos</h1>
 
-@if(Model != null)
+@if (Model != null)
 {
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.IdCoche)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Marca)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Modelo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Imagen)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdCoche)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Marca)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Modelo)
-            </td>
-            <td>
-                <img src="@Html.DisplayFor(modelItem => item.Imagen)" style="width: 150px; height: 150px"/>
-            </td>
-            <td>
-                @*<a asp-action="Details" 
-                    asp-controller="Coches"
-                    asp-route-id="@item.IdCoche"
-                    class="btn btn-info">
-                    Detalles
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdCoche)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Marca)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Modelo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Imagen)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdCoche)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Marca)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Modelo)
+                    </td>
+                    <td>
+                        <img src="@Html.DisplayFor(modelItem => item.Imagen)" style="width: 150px; height: 150px" />
+                    </td>
+                    <td>
+                        @*<a asp-action="Details"
+                asp-controller="Coches"
+                asp-route-id="@item.IdCoche"
+                class="btn btn-info">
+                Detalles
                 </a>*@
-                <a asp-action="EliminarFavorito" 
-                    asp-controller="Coches"
-                    asp-route-idcoche="@item.IdCoche"
-                    class="btn btn-danger">
-                    Eliminar Favorito
-                </a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                        <a asp-action="EliminarFavorito"
+                           asp-controller="Coches"
+                           asp-route-idcoche="@item.IdCoche"
+                           class="btn btn-danger">
+                            Eliminar Favorito
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 else
 {
