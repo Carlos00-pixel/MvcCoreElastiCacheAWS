@@ -1,17 +1,9 @@
 ﻿@model IEnumerable<MvcCoreElastiCacheAWS.Models.Coche>
 
-@{
-    ViewData["Title"] = "Index";
-}
+<h1>Favoritos</h1>
 
-<h1>Coches</h1>
-
-<a asp-action="Favorito" 
-    asp-controller="Coches"
-    class="btn btn-outline-light">
-    Mostrar Favorito
-</a>
-
+@if(Model != null)
+{
 <table class="table">
     <thead>
         <tr>
@@ -58,14 +50,20 @@
                     class="btn btn-info">
                     Detalles
                 </a>
-                <a asp-action="SeleccionarFavorito" 
+                <a asp-action="EliminarFavorito" 
                     asp-controller="Coches"
                     asp-route-id="@item.IdCoche"
-                    class="btn" style="background-color: yellow">
-                    Seleccionar Favorito
+                    class="btn btn-danger">
+                    Eliminar Favorito
                 </a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+}
+else
+{
+    <h1 style="color: red">No hay favoritos</h1>
+}
+
