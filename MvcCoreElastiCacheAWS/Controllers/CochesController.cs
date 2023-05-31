@@ -32,6 +32,14 @@ namespace MvcCoreElastiCacheAWS.Controllers
         public async Task<IActionResult> SeleccionarFavorito(int idcoche)
         {
             Coche car = this.repo.FindCoche(idcoche);
+            if (car == null)
+            {
+                ViewData["MENSAJE"] = "no hay CAR";
+            }
+            else
+            {
+                ViewData["MENSAJE"] = car.Marca + " " + car.Modelo;
+            }
             await this.serviceCache.AddCocheAsync(car);
             return RedirectToAction("Favoritos");
         }
