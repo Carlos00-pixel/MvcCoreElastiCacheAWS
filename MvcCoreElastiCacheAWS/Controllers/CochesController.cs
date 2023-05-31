@@ -41,7 +41,8 @@ namespace MvcCoreElastiCacheAWS.Controllers
                 ViewData["MENSAJE"] = car.Marca + " " + car.Modelo;
             }
             await this.serviceCache.AddCocheAsync(car);
-            return RedirectToAction("Favoritos");
+            //return RedirectToAction("Favoritos");
+            return View();
         }
 
         public async Task<IActionResult> Favoritos()
