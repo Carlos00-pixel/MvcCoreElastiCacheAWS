@@ -62,5 +62,10 @@ namespace MvcCoreElastiCacheAWS.Services
                 }
             }
         }
+
+        public async Task EliminarCacheAsync()
+        {
+            await this.cache.KeyDeleteAsync("cochesfavoritos");
+        }
     }
 }

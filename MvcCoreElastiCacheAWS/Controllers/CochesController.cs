@@ -23,6 +23,15 @@ namespace MvcCoreElastiCacheAWS.Controllers
             return View(coches);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Index(string boton)
+        {
+            await this.serviceCache.EliminarCacheAsync();
+            List<Coche> coches = this.repo.GetCoches();
+            return View(coches);
+        }
+        
+
         public IActionResult Details(int id)
         {
             Coche car = this.repo.FindCoche(id);
